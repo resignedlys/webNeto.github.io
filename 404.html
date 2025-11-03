@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    // 重定向到 index.html，让 docsify 处理路由
+    var url = window.location.pathname;
+    if (url.endsWith('.html')) {
+      // 如果是 .html 请求，尝试去掉后缀（可选）
+      url = url.slice(0, -5);
+    }
+    window.location.replace('/' + (url === '/' ? '' : url));
+  </script>
+</head>
+</html>
