@@ -1,22 +1,54 @@
-<!-- index.html  -docsify  -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <title>My Docs</title>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/themes/vue.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>我的文档</title>
+  <!-- Docsify 默认主题（Vue 风格） -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/themes/vue.css" />
+  <!-- 可选：代码高亮样式 -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.css" />
+  <style>
+    /* 可选：微调中文显示 */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    }
+  </style>
 </head>
 <body>
-  <div id="app">Loading...</div>
+  <div id="app">正在加载文档...</div>
+
   <script>
     window.$docsify = {
-      name: 'My Docs',
-      loadNavbar: true,
-      loadSidebar: true,
-      subMaxLevel: 3,
-      auto2top: true
-    }
+      name: '我的文档',
+      repo: '', // 可填你的 GitHub 仓库地址，如 'yourname/your-repo'
+      loadSidebar: true,        // 启用 _sidebar.md
+      loadNavbar: false,        // 如需顶部导航可设为 true + 添加 _navbar.md
+      coverpage: false,         // 是否启用封面（README.md 作为首页）
+      auto2top: true,           // 切换页面后自动滚动到顶部
+      subMaxLevel: 3,           // 自动生成右侧 TOC 的标题层级（1~3 级）
+      search: {
+        placeholder: '🔍 搜索',
+        noData: '未找到结果',
+        paths: 'auto',
+        depth: 3
+      },
+      pagination: {
+        previousText: '上一篇',
+        nextText: '下一篇'
+      }
+    };
   </script>
+
+  <!-- 核心库 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <!-- 搜索插件 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <!-- 代码高亮 -->
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-javascript.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-markdown.min.js"></script>
+  <!-- 分页插件（可选） -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
 </body>
 </html>
